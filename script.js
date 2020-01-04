@@ -6,16 +6,9 @@
     method: "GET"
   }).then(function (response) {
 
-    if (response) {
-
-      response === (response.type.twopart)
-
-      $("#jokeBox").text(response.setup);
-      $("#jokeBox").text(response.delivery);
-    }
-
     $("#jokeBox").text(response.joke);
     console.log(response);
+
   });
   // This is the Giphy API Call
   var queryURL2 = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
@@ -25,7 +18,15 @@
     method: "GET"
   }).then(function (response) {
 
-    $("#imageBox").append(data[0]);
+    var imageUrl = response.data[0].images.fixed_height.url;
+    var giphyImage = $("<img>");
+
+    giphyImage.attr("src", imageUrl);
+    giphyImage.attr("alt", "giphy");
+
+    console.log(imageUrl);
+
+    $("#imageBox").append(giphyImage);
     console.log(response);
 
   });
