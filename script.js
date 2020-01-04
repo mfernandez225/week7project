@@ -5,6 +5,8 @@
     url: queryURL,
     method: "GET"
   }).then(function (response) {
+    // $("#jokeBox").text(setup);
+    // $("#jokeBox").text(delivery);
     console.log(response);
   });
   // This is the Giphy API Call
@@ -14,6 +16,7 @@
     url: queryURL2,
     method: "GET"
   }).then(function (response) {
+
     console.log(response);
   });
 
