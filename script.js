@@ -5,8 +5,16 @@
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    // $("#jokeBox").text(setup);
-    // $("#jokeBox").text(delivery);
+
+    if (response) {
+
+      response === (response.type.twopart)
+
+      $("#jokeBox").text(response.setup);
+      $("#jokeBox").text(response.delivery);
+    }
+
+    $("#jokeBox").text(response.joke);
     console.log(response);
   });
   // This is the Giphy API Call
@@ -17,7 +25,9 @@
     method: "GET"
   }).then(function (response) {
 
+    $("#imageBox").append(data[0]);
     console.log(response);
+
   });
 
   // This is the Quotes API Call (This is functioning I just disabled to not pull quotes all the time.gi)
