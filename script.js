@@ -144,12 +144,12 @@ $(function () {
   answers[0] = ["cat", "dog", "elephant", "giraffe"];
   answers[1] = ["red", "green", "blue", "yellow"];
   answers[2] = ["football", "basketball", "volleyball", "table tennis"];
-  answers[3] = ['Programming', 'Miscellaneous', 'Dark', 'Kanye'];
+  answers[3] = ['Programming', 'Political', 'Dark', 'Kanye'];
   var answers_img = new Array();
   answers_img[0] = ["cat.jpg", "dog.jpg", "elephant.jpg", "giraffe.jpg"];
   answers_img[1] = ["red", "green", "blue", "yellow"];
-  answers_img[2] = ["football.jpg", "basketball.jpg", "volleyball.jpg", "table_tennis.jpg"];
-  answers_img[3] = ['classic.jpg', 'rock.jpg', 'popular.jpg', 'opera.jpg'];
+  answers_img[2] = ["sportsoccer.jpg", "sportbasketball.jpg", "sportvolleyball.jpg", "sporttabletennis.jpg"];
+  answers_img[3] = ['humornerdy.jpg', 'humorpolitical.jpg', 'humordirty.jpg', 'humorkanye.jpg'];
 
   $(".choose_btn").on("click", function () {
     var answer_number = $(this).attr("chooseid");
