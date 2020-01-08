@@ -100,7 +100,7 @@ body {
 }
 
 .flip-card-back2 {
-  background-color: #29b94d;
+  background-color: #1c1a81;
   color: white;
   transform: rotateX(180deg);
 }
@@ -145,7 +145,7 @@ body {
 }
 
 .flip-card-back3 {
-  background-color: #2980b9;
+  background-color: #1e0285;
   color: white;
   transform: rotateY(180deg);
 }
