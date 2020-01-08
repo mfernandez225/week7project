@@ -6,7 +6,7 @@ $.ajax({
   url: queryURL,
   method: "GET"
 }).then(function (response) {
-  console.log(response.data[0].images.fixed_height.url)
+  // console.log(response.data[0].images.fixed_height.url)
   var sportImg = response.data[0].images.fixed_height.url
   $("#sports").append(`<img height="150" width="250" src="${sportImg}" />`)
   // $("#jokeBox").text(response.joke);
@@ -21,11 +21,10 @@ $.ajax({
   url: queryURL2,
   method: "GET"
 }).then(function (response) {
-  console.log(response)
-  console.log(response.data[0].images.fixed_height_still.url)
+ 
 
   var imageUrl = response.data[1].images.fixed_height.url;
-  console.log(imageUrl)
+
   $("#imageBox").append(`<img height="150" width="250" src="${imageUrl}" />`)
 
   // var giphyImage = $("<img>");
@@ -37,21 +36,25 @@ $.ajax({
 });
 
 
-var kanyeURL = `https://api.kanye.rest?format=text`;
+// var kanyeURL = `https://api.kanye.rest?format=text`;
 
-// "https://sv443.net/jokeapi/category/sports"
-$.ajax({
-  url: kanyeURL,
-  method: "GET"
-}).then(function (response) {
-  console.log(response)
+// // "https://sv443.net/jokeapi/category/sports"
+// $.ajax({
+//   url: kanyeURL,
+//   method: "GET"
+// }).then(function (response) {
 
-  $("#quote").append(`<p class='lead'>${response}</p>`)
 
-  // $("#jokeBox").text(response.joke);
-  // console.log(response);
+//   $("#quote").append(`<p class='lead'>${response}</p>`)
 
-});
+//   // $("#jokeBox").text(response.joke);
+//   // console.log(response);
+
+// });
+
+
+
+
 // This is the Quotes API Call (This is functioning I just disabled to not pull quotes all the time.gi)
 
 // var getQuote = {
@@ -68,6 +71,49 @@ $.ajax({
 // $.ajax(getQuote).done(function (response) {
 //   console.log(response);
 // });
+if(localStorage.getItem("answer_3") === ('Programming' || 'Miscellaneous' ||'Dark' )) {
+
+var jokeURL = `https://sv443.net/jokeapi/category/${localStorage.getItem("answer_3")}`;
+
+// "https://sv443.net/jokeapi/category/sports"
+$.ajax({
+  url: jokeURL,
+  method: "GET"
+}).then(function (response) {
+  console.log(response.joke)
+  $("#quote").append(`<p class='lead'>${response.joke}</p>`)
+
+  // $("#quote").append(`<p class='lead'>${response}</p>`)
+
+
+})
+}else {
+  var kanyeURL = `https://api.kanye.rest?format=text`;
+
+// "https://sv443.net/jokeapi/category/sports"
+$.ajax({
+  url: kanyeURL,
+  method: "GET"
+}).then(function (response) {
+
+
+  $("#quote").append(`<p class='lead'>${response}</p>`)
+
+  // $("#jokeBox").text(response.joke);
+  // console.log(response);
+
+});
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -95,12 +141,12 @@ $(function () {
     }
   });
 
-  var question = ["What is your favorite animal?", "What is your favorite color?", "What is your favorite sport?", "What is your favorite music?"];
+  var question = ["What is your favorite animal?", "What is your favorite color?", "What is your favorite sport?", "What best matches your humor?"];
   var answers = new Array();
   answers[0] = ["cat", "dog", "elephant", "giraffe"];
   answers[1] = ["red", "green", "blue", "yellow"];
   answers[2] = ["football", "basketball", "volleyball", "table tennis"];
-  answers[3] = ['classic', 'rock', 'popular', 'opera'];
+  answers[3] = ['Programming', 'Miscellaneous', 'Dark', 'Kanye'];
   var answers_img = new Array();
   answers_img[0] = ["cat.jpg", "dog.jpg", "elephant.jpg", "giraffe.jpg"];
   answers_img[1] = ["red", "green", "blue", "yellow"];
