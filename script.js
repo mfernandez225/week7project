@@ -1,7 +1,7 @@
 // This is the Jokes API Call
 var queryURL = `https://api.giphy.com/v1/gifs/search?q=${localStorage.getItem("answer_2")}&api_key=dc6zaTOxFJmzC`;
 
-// "https://sv443.net/jokeapi/category/sports"
+// "https://sv443.net/jokeapi/category/"
 $.ajax({
   url: queryURL,
   method: "GET"
@@ -82,15 +82,13 @@ $(function () {
     var user_name = $("#helloBox").val();
     if (typeof (Storage) !== "undefined") {
       localStorage.setItem("user_name", user_name);
-    }
-    else {
+    } else {
       alert("Sorry, your browser does not support web storage...");
     }
     // not letting user move forward until there is text inputted
     if (user_name != "" && localStorage.getItem('user_name') != null) {
       location.href = "./index2.html";
-    }
-    else if (user_name == "") {
+    } else if (user_name == "") {
       alert('Please enter your name');
     }
   });
@@ -121,16 +119,15 @@ $(function () {
       console.log(`qnum : ${question_number} answernum: ${answer_reg_num}`)
       if (question_number == 4) {
         localStorage.setItem("answer_3", answers[3][answer_number - 1]);
-        var alert_content = "Your Name is " + localStorage.getItem("user_name") + "\r\n"
-          + localStorage.getItem("question_0") + "=>" + localStorage.getItem("answer_0") + "\r\n"
-          + localStorage.getItem("question_1") + "=>" + localStorage.getItem("answer_1") + "\r\n"
-          + localStorage.getItem("question_2") + "=>" + localStorage.getItem("answer_2") + "\r\n"
-          + localStorage.getItem("question_3") + "=>" + localStorage.getItem("answer_3");
+        var alert_content = "Your Name is " + localStorage.getItem("user_name") + "\r\n" +
+          localStorage.getItem("question_0") + "=>" + localStorage.getItem("answer_0") + "\r\n" +
+          localStorage.getItem("question_1") + "=>" + localStorage.getItem("answer_1") + "\r\n" +
+          localStorage.getItem("question_2") + "=>" + localStorage.getItem("answer_2") + "\r\n" +
+          localStorage.getItem("question_3") + "=>" + localStorage.getItem("answer_3");
         alert(alert_content);
         localStorage.clickcount = 0;
         location.href = "./display.html";
-      }
-      else {
+      } else {
         $("#question_p").text(question[question_number]);
         for (var i = 0; i < 4; i++) {
           var k = i + 1;
@@ -139,8 +136,7 @@ $(function () {
 
             $("#flip_card_front_" + k).css("background-image", "none");
             $("#flip_card_front_" + k).css("background-color", answers_img[question_number][i]);
-          }
-          else {
+          } else {
             $("#flip_card_front_" + k).css("background-image", "url('./images/" + answers_img[question_number][i] + "')");
           }
 

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -23,25 +23,39 @@
       background-repeat: no-repeat;
       background-size: 100% 100%;
     } */
+
   </style>
 </head>
 
 <body>
-  <nav class="text-center mb-5 border border-dark bg-secondary p-5 display-3"> <span id="nameDrop"></span>'s Mood Page</nav>
+  <nav class="text-center mb-5 border border-dark bg-secondary p-3 display-3">Hi <span id="nameDrop"></span>! Thanks for
+    visiting our page. I hope we made your day better.
+  </nav>
 
 
 
-  <div class="container backdrop" >
+  <div class="container backdrop">
     <div class="row">
-      <div id="quoteBox" class="border border-dark  p-5 col-sm-6"><span id="sports"></span></div>
-      <div id="jokeBox" class="border border-dark p-5 col-sm-6 lead font-weight-bold"> Kanyes Advice<span id="quote"></span></div>
+      <div id="quoteBox" class="border border-dark p-3 col-sm-6"><span id="sports"></span></div>
+      <div id="jokeBox" class="border border-dark p-3 col-sm-6 text-center lead font-weight-bold"> Joke<span
+          id="quote"></span>
+      </div>
     </div>
 
     <div class="row">
-      <div id="textBox" class="border border-dark p-5 col-sm-6 lead ">Would you like to play some music?<button type="button" class="btn btn-dark">Play Music *icon*</button> </div>
+      <div id="textBox" class="border border-dark p-5 col-sm-6 text-center lead">Would you like to play some
+        music?<button type="button" class="btn btn-dark">Play Music</button> </div>
       <div class="border border-dark p-5 col-sm-6 "> <span id="imageBox"></span></div>
     </div>
- 
+    <div class="row">
+      <div class="col-sm-6">
+        <button id="yes" type="button" class="px-md-5 btn btn-secondary btn-lg">Large button</button>
+      </div>
+      <div class="col-sm-6">
+        <button id="yes" type="button" class="px-md-5 btn btn-secondary btn-lg">Large button</button>
+      </div>
+    </div>
+
   </div>
 
 
