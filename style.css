@@ -1,18 +1,24 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: darkgray;
+  background-color: #404040;
 }
 
 #questionBox{
   text-align: center;
+}
 
+#question_p{
+  color:#29b94d;
+  font-family: Permanent Marker;
+  font-size: 150%;
+  margin-top: 5%;
 }
 
 .flip-card {
-  float: left;
   padding: 30px;
+  float: left;
   width: 300px;
-  height: 300px;
+  height: 400px;
 }
 
 .flip-card-inner {
@@ -38,9 +44,15 @@ body {
 }
 
 .flip-card-front {
+  
+  /* background-image: url(https://static-s.aa-cdn.net/img/amazon/30600000320601/31794ef46cbacfa20b047719db87f5f0?v=1); */
   background-color: rgb(212, 55, 55);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   color: black;
 }
+
 
 .flip-card-back {
   background-color: #2980b9;
@@ -54,7 +66,7 @@ body {
   float: left;
   padding: 30px;
   width: 300px;
-  height: 300px;
+  height: 400px;
 }
 
 .flip-card-inner2 {
@@ -81,6 +93,9 @@ body {
 
 .flip-card-front2 {
   background-color: rgb(212, 55, 55);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   color: black;
 }
 
@@ -88,4 +103,49 @@ body {
   background-color: #29b94d;
   color: white;
   transform: rotateX(180deg);
+}
+
+/* SECOND BOX TEST TEST */
+
+.flip-card3 {
+  float: left;
+  padding: 30px;
+  width: 300px;
+  height: 400px;
+}
+
+.flip-card-inner3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+.flip-card3:hover .flip-card-inner3 {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front3, .flip-card-back3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front3 {
+  background-color: rgb(212, 55, 55);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  color: black;
+}
+
+.flip-card-back3 {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
 }

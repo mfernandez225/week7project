@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TeamEmotions</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="questionBox">
+  <p id=question_p>QUESTION QUESTION QUESTION</p>
+</div>
+
+
+  <div id="cardBox">
+    <div id="card1" class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" id="flip_card_front_1">
+        </div>
+        <div class="flip-card-back">
+          <br>
+          <h2>You Choose</h2>
+          <p id="answer_1">Option #1</p>
+          <a href="#" class="btn btn-success choose_btn" chooseid="1" id="enterCard_1">choose</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="card2" class="flip-card2">
+      <div class="flip-card-inner2">
+        <div class="flip-card-front2" id="flip_card_front_2">
+        </div>
+        <div class="flip-card-back2">
+          <br>
+          <h2>You Choose</h2>
+          <p id="answer_2">Option #2</p>
+          <a href="#" class="btn btn-primary choose_btn" chooseid="2" id="enterCard_2">choose</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="card2" class="flip-card2">
+      <div class="flip-card-inner2">
+        <div class="flip-card-front2" id="flip_card_front_3">
+        </div>
+        <div class="flip-card-back2">
+          <br>
+          <h2>You Choose</h2>
+          <p id="answer_3">Option #3</p>
+          <a href="#" class="btn btn-primary choose_btn" chooseid="3" id="enterCard_3">choose</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="card3" class="flip-card3">
+      <div class="flip-card-inner3">
+        <div class="flip-card-front3" id="flip_card_front_4">
+        </div>
+        <div class="flip-card-back3">
+          <br>
+          <h2>You Choose</h2>
+          <p id="answer_4">Option #4</p>
+          <a href="#" class="btn btn-success choose_btn" chooseid="4" id="enterCard_4">choose</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  
+  <script>
+    $(function(){
+      var question = ["What is your favorite animal?", "What is your color?", "What is your favorite sport?", "What is your favorite music?"];
+      var answers = new Array();
+      answers[0] = ["cat", "dog", "elephant", "girrafe"];
+      answers[1] = ["red", "green", "bule", "yello"];
+      answers[2] = ["football", "basketball", "volleyball", "table tennis"];
+      answers[3] = ['classic', 'rock', 'popular', 'opera'];
+      var answers_img = new Array();
+      answers_img[0] = ["cat.jpg", "dog.jpg", "elephant.jpg", "giraffe.jpg"];
+      answers_img[1] = ["red", "green", "bule", "yello"];
+      answers_img[2] = ["football.jpg", "basketball.jpg", "volleyball.jpg", "table_tennis.jpg"];
+      answers_img[3] = ['classic.jpg', 'rock.jpg', 'popular.jpg', 'opera.jpg'];
+
+      if(typeof(Storage) === "undefined"){
+        location.href = "./index1.html";
+      }
+      else{
+        if(localStorage.getItem("user_name") == null){
+          location.href = "./index1.html";
+        }
+        else{
+          localStorage.clickcount = 0;
+          $("#question_p").text(question[0]);
+          localStorage.setItem("question_0", question[0]);
+          for(var i = 0; i < 4; i++){
+            var k = i + 1;
+            $("#answer_"+k).text(answers[0][i]);
+            $("#flip_card_front_"+k).css("background-image", "url('./images/"+answers_img[0][i]+"')");
+
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
