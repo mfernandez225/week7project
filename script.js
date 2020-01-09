@@ -8,7 +8,7 @@ $.ajax({
 }).then(function (response) {
   // console.log(response.data[0].images.fixed_height.url)
   var sportImg = response.data[0].images.fixed_height.url
-  $("#sports").append(`<img height="150" width="250" src="${sportImg}" />`)
+  $("#sports").append(`<img height="150" width="250" src="${sportImg}" class="rounded" />`)
   // $("#jokeBox").text(response.joke);
   // console.log(response);
 
@@ -25,7 +25,7 @@ $.ajax({
 
   var imageUrl = response.data[1].images.fixed_height.url;
 
-  $("#imageBox").append(`<img height="150" width="250" src="${imageUrl}" />`)
+  $("#imageBox").append(`<img height="150" width="250" src="${imageUrl}" class="rounded" />`)
 
   // var giphyImage = $("<img>");
   // giphyImage.attr("src", imageUrl);
@@ -71,8 +71,7 @@ $.ajax({
 // $.ajax(getQuote).done(function (response) {
 //   console.log(response);
 // });
-if (localStorage.getItem("answer_3") == ('Programming' || 'Miscellaneous' || 'Dark')) {
-
+if (localStorage.getItem("answer_3") === 'Programming' || localStorage.getItem("answer_3") === 'Miscellaneous' || localStorage.getItem("answer_3") === 'Dark') {
   var jokeURL = `https://sv443.net/jokeapi/category/${localStorage.getItem("answer_3")}`;
 
   // "https://sv443.net/jokeapi/category/sports"
@@ -84,13 +83,11 @@ if (localStorage.getItem("answer_3") == ('Programming' || 'Miscellaneous' || 'Da
     if (response.type == "twopart") {
       $("#quote").append(`<p class='lead'>${response.setup}</p>`)
       $("#quote").append(`<p class='lead'>${response.delivery}</p>`)
-    }
-    else {
+    } else {
       $("#quote").append(`<p class='lead'>${response.joke}</p>`)
     }
   })
-}
- else {
+} else {
   var kanyeURL = `https://api.kanye.rest?format=text`;
 
   // "https://sv443.net/jokeapi/category/sports"

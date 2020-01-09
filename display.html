@@ -1,60 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <style>
+    body,
+    .wrapper,
+    .sidebar {
+      min-height: 100vh;
+    }
 
+    body {
+      background-color: #f0f0f0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
 
   </style>
 </head>
-
 <body>
-
-  <div class="text-center float-left border border-dark bg-secondary p-3 display-3">Hi <span id="nameDrop"></span>!
-  </div>
-
-
-
-  <div id="backdrop" class="container">
-    <div class="row mx-auto">
-      <div id="quoteBox" class="border border-dark col-sm-6"><span id="sports"></span></div>
-      <div id="jokeBox" class="border border-dark col-sm-6 text-center lead font-weight-bold"> Joke<span
-          id="quote"></span>
+  <div class="wrapper d-flex">
+    <nav id="sidebar" class="colorSelected sidebar text-center border p-3">
+      <div class="nameDrop font-weight-bolder bg-light rounded-circle p-5"></div>
+    </nav>
+    <div id="backdrop" class="container">
+      <div class="row mt-5">
+        <div class="col text-center">
+          <p>lorem ipsum <span class="nameDrop"></span> lorem ipsum</p>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-sm-6 text-center">
+          <button id="yes" type="button" class="btn btn-success btn-lg">Yes</button>
+        </div>
+        <div class="col-sm-6 text-center">
+          <button id="no" type="button" class="btn btn-danger btn-lg">No</button>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center flex-grow-1 p-4">
+            <span id="sports"></span>
+          </div>
+        </div>
+        <div class="col-sm-6 d-flex align-items-stretch">
+          <div class="card lead font-weight-bold text-center flex-grow-1 p-4">
+            Joke
+            <span id="quote"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center lead flex-grow-1 p-4">
+            Unknown Question
+            <span id=""></span>
+          </div>
+        </div>
+        <div class="col-sm-6 d-flex align-items-stretch">
+          <div class="card text-center flex-grow-1 p-4">
+            <span id="imageBox"></span>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="row">
-      <div id="textBox" class="border border-dark p-5 col-sm-6 text-center lead">Would you like to play some
-        music?<button type="button" class="btn btn-dark">Play Music</button> </div>
-      <div class="border border-dark p-5 col-sm-6 "> <span id="imageBox"></span></div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <button id="yes" type="button" class="px-md-5 btn btn-secondary btn-lg">yes</button>
-      </div>
-      <div class="col-sm-6">
-        <button id="no" type="button" class="px-md-5 btn btn-secondary btn-lg">try again</button>
-      </div>
-    </div>
-
   </div>
-
-
-
-
-  </div>
-
-
+  <script src="./script.js"></script>
+  <script src="./display.js"></script>
 </body>
-<script src="script.js"></script>
-<script src="./display.js"></script>
-
 </html>
