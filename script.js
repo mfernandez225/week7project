@@ -21,7 +21,7 @@ $.ajax({
   url: queryURL2,
   method: "GET"
 }).then(function (response) {
- 
+
 
   var imageUrl = response.data[1].images.fixed_height.url;
 
@@ -71,38 +71,41 @@ $.ajax({
 // $.ajax(getQuote).done(function (response) {
 //   console.log(response);
 // });
-if(localStorage.getItem("answer_3") === ('Programming' || 'Miscellaneous' ||'Dark' )) {
+if (localStorage.getItem("answer_3") == ('Programming' || 'Miscellaneous' || 'Dark')) {
 
-var jokeURL = `https://sv443.net/jokeapi/category/${localStorage.getItem("answer_3")}`;
+  var jokeURL = `https://sv443.net/jokeapi/category/${localStorage.getItem("answer_3")}`;
 
-// "https://sv443.net/jokeapi/category/sports"
-$.ajax({
-  url: jokeURL,
-  method: "GET"
-}).then(function (response) {
-  console.log(response.joke)
-  $("#quote").append(`<p class='lead'>${response.joke}</p>`)
+  // "https://sv443.net/jokeapi/category/sports"
+  $.ajax({
+    url: jokeURL,
+    method: "GET"
+  }).then(function (response) {
 
-  // $("#quote").append(`<p class='lead'>${response}</p>`)
-
-
-})
-}else {
+    if (response.type == "twopart") {
+      $("#quote").append(`<p class='lead'>${response.setup}</p>`)
+      $("#quote").append(`<p class='lead'>${response.delivery}</p>`)
+    }
+    else {
+      $("#quote").append(`<p class='lead'>${response.joke}</p>`)
+    }
+  })
+}
+ else {
   var kanyeURL = `https://api.kanye.rest?format=text`;
 
-// "https://sv443.net/jokeapi/category/sports"
-$.ajax({
-  url: kanyeURL,
-  method: "GET"
-}).then(function (response) {
+  // "https://sv443.net/jokeapi/category/sports"
+  $.ajax({
+    url: kanyeURL,
+    method: "GET"
+  }).then(function (response) {
 
 
-  $("#quote").append(`<p class='lead'>${response}</p>`)
+    $("#quote").append(`<p class='lead'>${response}</p>`)
 
-  // $("#jokeBox").text(response.joke);
-  // console.log(response);
+    // $("#jokeBox").text(response.joke);
+    // console.log(response);
 
-});
+  });
 }
 
 
