@@ -1,3 +1,8 @@
+
+
+var ran = Math.floor(Math.random() * 15);
+var ran2 = Math.floor(Math.random() * 15);
+
 // This is the Jokes API Call
 var queryURL = `https://api.giphy.com/v1/gifs/search?q=${localStorage.getItem("answer_2")}&api_key=dc6zaTOxFJmzC`;
 
@@ -7,7 +12,7 @@ $.ajax({
   method: "GET"
 }).then(function (response) {
   // console.log(response.data[0].images.fixed_height.url)
-  var sportImg = response.data[0].images.fixed_height.url
+  var sportImg = response.data[ran].images.fixed_height.url
   $("#sports").append(`<img height="150" width="250" src="${sportImg}" class="rounded" />`)
   // $("#jokeBox").text(response.joke);
   // console.log(response);
@@ -23,7 +28,7 @@ $.ajax({
 }).then(function (response) {
 
 
-  var imageUrl = response.data[1].images.fixed_height.url;
+  var imageUrl = response.data[ran2].images.fixed_height.url;
 
   $("#imageBox").append(`<img height="150" width="250" src="${imageUrl}" class="rounded" />`)
 
@@ -141,9 +146,9 @@ $(function () {
 
   var question = ["What is your favorite animal?", "What is your favorite color?", "What is your favorite sport?", "What best matches your humor?"];
   var answers = new Array();
-  answers[0] = ["cat", "dog", "elephant", "giraffe"];
-  answers[1] = ["red", "green", "blue", "yellow"];
-  answers[2] = ["football", "basketball", "volleyball", "table tennis"];
+  answers[0] = ["Cat", "Dog", "Elephant", "Girrafe"];
+  answers[1] = ["Red", "Green", "Bule", "Yellow"];
+  answers[2] = ["Football", "Basketball", "Volleyball", "Table Tennis"];
   answers[3] = ['Programming', 'Political', 'Dark', 'Kanye'];
   var answers_img = new Array();
   answers_img[0] = ["cat.jpg", "dog.jpg", "elephant.jpg", "giraffe.jpg"];
@@ -162,15 +167,15 @@ $(function () {
       }
       var question_number = localStorage.clickcount;
       var answer_reg_num = question_number - 1;
-      console.log(`qnum : ${question_number} answernum: ${answer_reg_num}`)
+   
       if (question_number == 4) {
         localStorage.setItem("answer_3", answers[3][answer_number - 1]);
-        var alert_content = "Your Name is " + localStorage.getItem("user_name") + "\r\n" +
-          localStorage.getItem("question_0") + "=>" + localStorage.getItem("answer_0") + "\r\n" +
-          localStorage.getItem("question_1") + "=>" + localStorage.getItem("answer_1") + "\r\n" +
-          localStorage.getItem("question_2") + "=>" + localStorage.getItem("answer_2") + "\r\n" +
-          localStorage.getItem("question_3") + "=>" + localStorage.getItem("answer_3");
-        alert(alert_content);
+        // var alert_content = "Your Name is " + localStorage.getItem("user_name") + "\r\n" +
+        //   localStorage.getItem("question_0") + "=>" + localStorage.getItem("answer_0") + "\r\n" +
+        //   localStorage.getItem("question_1") + "=>" + localStorage.getItem("answer_1") + "\r\n" +
+        //   localStorage.getItem("question_2") + "=>" + localStorage.getItem("answer_2") + "\r\n" +
+        //   localStorage.getItem("question_3") + "=>" + localStorage.getItem("answer_3");
+        // alert(alert_content);
         localStorage.clickcount = 0;
         location.href = "./display.html";
       } else {
