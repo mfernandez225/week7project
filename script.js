@@ -1,24 +1,20 @@
-
-
+// This will create a random value so we can get a different giph everytime.
 var ran = Math.floor(Math.random() * 15);
 var ran2 = Math.floor(Math.random() * 15);
 
-// This is the Jokes API Call
+// This is the Sports API Call
 var queryURL = `https://api.giphy.com/v1/gifs/search?q=${localStorage.getItem("answer_2")}&api_key=dc6zaTOxFJmzC`;
 
-// "https://sv443.net/jokeapi/category/"
 $.ajax({
   url: queryURL,
   method: "GET"
 }).then(function (response) {
-  // console.log(response.data[0].images.fixed_height.url)
   var sportImg = response.data[ran].images.fixed_height.url
   $("#sports").append(`<img height="150" width="250" src="${sportImg}" class="rounded" />`)
-  // $("#jokeBox").text(response.joke);
-  // console.log(response);
+
 
 });
-// This is the Giphy API Call - calls animal gif
+// This is the Animal API Call - calls animal gif
 var queryURL2 = `https://api.giphy.com/v1/gifs/search?q=${localStorage.getItem("answer_0")}&api_key=dc6zaTOxFJmzC`;
 
 
@@ -32,54 +28,12 @@ $.ajax({
 
   $("#imageBox").append(`<img height="150" width="250" src="${imageUrl}" class="rounded" />`)
 
-  // var giphyImage = $("<img>");
-  // giphyImage.attr("src", imageUrl);
-  // giphyImage.attr("alt", "giphy");
-  // console.log(imageUrl)
-  // $("#imageBox").append(giphyImage);
-
 });
 
-
-// var kanyeURL = `https://api.kanye.rest?format=text`;
-
-// // "https://sv443.net/jokeapi/category/sports"
-// $.ajax({
-//   url: kanyeURL,
-//   method: "GET"
-// }).then(function (response) {
-
-
-//   $("#quote").append(`<p class='lead'>${response}</p>`)
-
-//   // $("#jokeBox").text(response.joke);
-//   // console.log(response);
-
-// });
-
-
-
-
-// This is the Quotes API Call (This is functioning I just disabled to not pull quotes all the time.gi)
-
-// var getQuote = {
-//   "async": true,
-//   "crossDomain": true,
-//   "url": "https://quotable-quotes.p.rapidapi.com/randomQuotes",
-//   "method": "GET",
-//   "headers": {
-//     "x-rapidapi-host": "quotable-quotes.p.rapidapi.com",
-//     "x-rapidapi-key": "8dba9d69a1msh6c225bacd1ec6ecp1d626cjsn9856a04e02e3"
-//   }
-// }
-
-// $.ajax(getQuote).done(function (response) {
-//   console.log(response);
-// });
+// Joke API call
 if (localStorage.getItem("answer_3") === 'Programming' || localStorage.getItem("answer_3") === 'Miscellaneous' || localStorage.getItem("answer_3") === 'Dark') {
   var jokeURL = `https://sv443.net/jokeapi/category/${localStorage.getItem("answer_3")}`;
 
-  // "https://sv443.net/jokeapi/category/sports"
   $.ajax({
     url: jokeURL,
     method: "GET"
@@ -93,9 +47,9 @@ if (localStorage.getItem("answer_3") === 'Programming' || localStorage.getItem("
     }
   })
 } else {
+  // This is the Kanye Quote API Call
   var kanyeURL = `https://api.kanye.rest?format=text`;
 
-  // "https://sv443.net/jokeapi/category/sports"
   $.ajax({
     url: kanyeURL,
     method: "GET"
@@ -104,27 +58,8 @@ if (localStorage.getItem("answer_3") === 'Programming' || localStorage.getItem("
 
     $("#quote").append(`<p class='lead'>${response}</p>`)
 
-    // $("#jokeBox").text(response.joke);
-    // console.log(response);
-
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //PALLAV FRONT PAGE SCRIPT
 
@@ -167,7 +102,7 @@ $(function () {
       }
       var question_number = localStorage.clickcount;
       var answer_reg_num = question_number - 1;
-   
+
       if (question_number == 4) {
         localStorage.setItem("answer_3", answers[3][answer_number - 1]);
         // var alert_content = "Your Name is " + localStorage.getItem("user_name") + "\r\n" +
