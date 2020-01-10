@@ -18,7 +18,7 @@ body {
   float: left;
   padding: 30px;
   width: 300px;
-  height: 300px;
+  height: 400px;
 }
 
 .flip-card-inner {
@@ -60,8 +60,8 @@ body {
 .flip-card2 {
   float: left;
   padding: 30px;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 500px;
 }
 
 .flip-card-inner2 {
