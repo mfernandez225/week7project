@@ -7,8 +7,10 @@
   <title>Document</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
   <style>
     body,
     .wrapper,
@@ -17,82 +19,90 @@
     }
 
     body {
-      background-color: #f0f0f0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23bfae54' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
+
+    #userName {
+      text-align: center;
+      font-size: 37px;
+      font-family: Permanent Marker;
+    }
+
     @media only screen and (max-width: 1024px) {
-#sidebar{
-  display: none;
-}
-}
+      #sidebar {
+        display: none;
+      }
+    }
 
   </style>
 </head>
-<body style="background-color: #404040;">
-
+<body>
   <div class="container loadingContainer h-100 ">
-    <div class="row h-100 justify-content-center align-items-center mt-5"  >
-    <div class="loader mx-auto" id="loader" >
-      <img src="./images/spinna.gif" alt="loader">
+    <div class="row h-100 justify-content-center align-items-center mt-5">
+      <div class="loader mx-auto" id="loader">
+        <img src="./images/spinna.gif" alt="loader">
+      </div>
     </div>
   </div>
-  </div>
 
-<div class="content" style="display: none;">
+  <div class="content" style="display: none;">
 
 
-  <div class="container-fluid p-0 " style="height: 100vh;">
-  <div class="wrapper d-flex  " >
-    <nav id="sidebar" class="colorSelected sidebar text-center border p-3" >
-      <div class=" font-weight-bolder bg-light rounded-circle p-5"> <span class="nameDrop lead"></span></div>
-    </nav>
-    <div id="backdrop" class="container p-0">
-      <div class="row mt-5">
-        <div class="col text-center">
-          <p class="display-4 text-light"> <span class="nameDrop"></span>'s Good Mood Page</p>
-        </div>
-      </div>
-     
-
-      <div class="row mb-4 pt-5 ">
-        <div class="col-sm-6 d-flex align-items-stretch">
-          <div class="card text-center flex-grow-1 p-4">
-            <span id="sports"></span>
+    <div class="container-fluid p-0 " style="height: 100vh;">
+      <div class="wrapper d-flex  ">
+        <nav id="sidebar" class="colorSelected sidebar text-center border p-3">
+          <div class=" font-weight-bolder bg-light rounded-circle p-5"> <span id="userName"
+              class="nameDrop lead"></span></div>
+        </nav>
+        <div id="backdrop" class="container p-0">
+          <div class="row mt-5">
+            <div class="col text-center">
+              <p class="display-4 text-dark"> <span class="nameDrop"></span>'s Good Mood Page</p>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-6 d-flex align-items-stretch">
-          <div class="card lead font-weight-bold text-center flex-grow-1 p-4">
-            <h4>Joke:</h4>
-            <span id="quote"></span>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 d-flex align-items-stretch">
-          <div class="card text-center lead flex-grow-1 p-4">
-           <h4 class="pb-4"> Did This Help Improve Your Mood?</h4>
-           <div class="row mb-4">
-              <div class="col-sm-6 text-center">
-                <button id="yes" type="button" class="btn btn-success btn-lg">Yes</button>
+
+
+          <div class="row mb-4 pt-5 ">
+            <div class="col-sm-6 d-flex align-items-stretch">
+              <div class="card text-center flex-grow-1 p-4">
+                <span id="sports"></span>
               </div>
-              <div class="col-sm-6 text-center">
-                <button id="no" type="button" class="btn btn-danger btn-lg">Try Again</button>
+            </div>
+            <div class="col-sm-6 d-flex align-items-stretch">
+              <div class="card lead font-weight-bold text-center flex-grow-1 p-4">
+                <h4>Joke:</h4>
+                <span id="quote"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 d-flex align-items-stretch">
+              <div class="card text-center lead flex-grow-1 p-4">
+                <h4 class="pb-4"> Did This Help Improve Your Mood?</h4>
+                <div class="row mb-4">
+                  <div class="col-sm-6 text-center">
+                    <button id="yes" type="button" class="btn m-1 btn-success btn-lg btn-block">Yes</button>
+                  </div>
+                  <div class="col-sm-6 text-center">
+                    <button id="no" type="button" class="btn m-1 btn-danger btn-lg btn btn-block">Try Again</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 d-flex align-items-stretch">
+              <div class="card text-center flex-grow-1 p-4">
+                <span id="imageBox"></span>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 d-flex align-items-stretch">
-          <div class="card text-center flex-grow-1 p-4">
-            <span id="imageBox"></span>
-          </div>
-        </div>
+
       </div>
     </div>
 
-    </div>
   </div>
-  
-</div>
 
   <script src="./script.js"></script>
   <script src="./display.js"></script>
