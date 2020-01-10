@@ -79,11 +79,11 @@ $(function () {
     }
   });
 
-  var question = ["What is your favorite animal?", "What is your favorite color?", "What is your favorite sport?", "What best matches your humor?"];
+  var question = ["What animal mood do you feel you relate to today?", "Find out your favorite color of the day based on your mood", "What is your favorite sport?", "Based on your mood, what best matches your humor today?"];
   var answers = new Array();
-  answers[0] = ["Cat", "Dog", "Elephant", "Girrafe"];
-  answers[1] = ["Red", "Green", "Bule", "Yellow"];
-  answers[2] = ["Football", "Basketball", "Volleyball", "Table Tennis"];
+  answers[0] = ["Cat wefjowiefjowef", "Dog", "Elephant", "Girrafe"];
+  answers[1] = ["Red", "Green", "Blue", "Yellow"];
+  answers[2] = ["Soccer", "Basketball", "Volleyball", "Table Tennis"];
   answers[3] = ['Programming', 'Political', 'Dark', 'Kanye'];
   var answers_img = new Array();
   answers_img[0] = ["cat.jpg", "dog.jpg", "elephant.jpg", "giraffe.jpg"];

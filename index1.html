@@ -106,12 +106,13 @@
       })
     })
     $(function () {
-      var question = ["What is your favorite animal?", "What is your color?", "What is your favorite sport?", "What is your favorite music?"];
+      var question = ["What animal mood do you feel you relate to today?", "Find out your favorite color of the day based on your mood", "What is your favorite sport?", "Based on your mood, what best matches your humor today?"];
       var answers = new Array();
-      answers[0] = ["Cat", "Dog", "Elephant", "Girrafe"];
-      answers[1] = ["Red", "Green", "Bule", "Yellow"];
-      answers[2] = ["Football", "Basketball", "Volleyball", "Table Tennis"];
+      answers[0] = ["Cat: You are feeling the need for attention sometimes and independent", "Dog: Your feeling the need for attention all the time and co-dependence", "Elephant: You are feeling love and family oriented", "Girrafe: You are feeling nonviolent"];
+      answers[1] = ["Red", "Green", "Blue", "Yellow"];
+      answers[2] = ["Soccer", "Basketball", "Volleyball", "Table Tennis"];
       answers[3] = ['Programming', 'Political', 'Dark', 'Kanye'];
+
       var answers_img = new Array();
       answers_img[0] = ["Pexel_cat.jpg", "pexel_dog.jpg", "pexel_elephant.jpg", "pexel_giraffe.jpg"];
       answers_img[1] = ["red", "green", "blue", "yellow"];
@@ -134,10 +135,14 @@
             $("#answer_" + k).text(answers[0][i]);
             $("#flip_card_front_" + k).css("background-image", "url('./images/" + answers_img[0][i] + "')");
 
+         
+
+
           }
         }
       }
     });
+
   </script>
 </body>
 
