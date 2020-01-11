@@ -62,7 +62,7 @@ if (localStorage.getItem("answer_3") === 'Programming' || localStorage.getItem("
 }
 
 //PALLAV FRONT PAGE SCRIPT
-
+// On click event to grab and store variables into local storage
 $(function () {
   $("#helloFont").on('click', function () {
     var user_name = $("#helloBox").val();
@@ -90,10 +90,9 @@ $(function () {
   answers_img[1] = ["red", "green", "blue", "yellow"];
   answers_img[2] = ["sportsoccer.jpg", "sportbasketball.jpg", "sportvolleyball.jpg", "sporttabletennis.jpg"];
   answers_img[3] = ['humornerdy.jpg', 'humorpolitical.jpg', 'humordirty.jpg', 'humorkanye.jpg'];
-
+  // Assigning variables into local storage.
   $(".choose_btn").on("click", function () {
     var answer_number = $(this).attr("chooseid");
-    // console.log("this is" + answer_number)
     if (typeof (Storage) !== "undefined") {
       if (localStorage.clickcount) {
         localStorage.clickcount = Number(localStorage.clickcount) + 1;
@@ -105,12 +104,6 @@ $(function () {
 
       if (question_number == 4) {
         localStorage.setItem("answer_3", answers[3][answer_number - 1]);
-        // var alert_content = "Your Name is " + localStorage.getItem("user_name") + "\r\n" +
-        //   localStorage.getItem("question_0") + "=>" + localStorage.getItem("answer_0") + "\r\n" +
-        //   localStorage.getItem("question_1") + "=>" + localStorage.getItem("answer_1") + "\r\n" +
-        //   localStorage.getItem("question_2") + "=>" + localStorage.getItem("answer_2") + "\r\n" +
-        //   localStorage.getItem("question_3") + "=>" + localStorage.getItem("answer_3");
-        // alert(alert_content);
         localStorage.clickcount = 0;
         location.href = "./display.html";
       } else {
