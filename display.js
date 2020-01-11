@@ -24,7 +24,7 @@ $(document).ready(function () {
         $('.colorSelected').attr('style' , 'background-color: #9d1818')
         $('#fillMe').text('You are in the mood of feeling passionate, exciting, youthful, and daring')
         return
-    }  if(color == "Bule"){
+    }  if(color == "Blue"){
         $('.bods').attr('style', `background-image: url("${blue}")`)
         $('.colorSelected').attr('style' , 'background-color: #294f81')
         $('#fillMe').text('You are in the mood of feeling reliable, professional, strength, and confidence')
