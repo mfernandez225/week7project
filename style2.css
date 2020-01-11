@@ -1,12 +1,11 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  /* background-color: #404040; */
   background: url('./images/Tshirt.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
- 
+
 }
 
 #questionBox {
@@ -134,14 +133,12 @@ header {
 
 .dottedline {
   border-top: 3px dotted gray;
-  /* margin-top: 100px; */
 }
 
 #helloBox {
   font-size: 40px;
   text-align: center;
   font-family: Permanent Marker;
-  /* margin-left: 20px; */
   width: 350px;
   height: 50px;
 }
@@ -152,8 +149,10 @@ header {
 }
 
 .loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #3498db;
+  /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -161,10 +160,15 @@ header {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.hide-loader{
-display:none;
+.hide-loader {
+  display: none;
 }

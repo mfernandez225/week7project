@@ -1,14 +1,14 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #404040;
- 
+
 }
 
-#questionBox{
+#questionBox {
   text-align: center;
 }
 
-#question_p{
+#question_p {
   color: white;
   font-family: Permanent Marker;
   font-size: 40px;
@@ -29,7 +29,7 @@ body {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 
@@ -37,7 +37,8 @@ body {
   transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -45,9 +46,8 @@ body {
 }
 
 .flip-card-front {
-  
-  /* background-image: url(https://static-s.aa-cdn.net/img/amazon/30600000320601/31794ef46cbacfa20b047719db87f5f0?v=1); */
-  background-color: rgb(212, 55, 55);
+
+  background-color: #9d1818;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -56,7 +56,7 @@ body {
 
 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color: #1c1a81;
   color: white;
   transform: rotateY(180deg);
 }
@@ -77,7 +77,7 @@ body {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 
@@ -85,7 +85,8 @@ body {
   transform: rotateX(180deg);
 }
 
-.flip-card-front2, .flip-card-back2 {
+.flip-card-front2,
+.flip-card-back2 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -93,7 +94,7 @@ body {
 }
 
 .flip-card-front2 {
-  background-color: rgb(212, 55, 55);
+  background-color: #9d1818;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -122,7 +123,7 @@ body {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 
@@ -130,7 +131,8 @@ body {
   transform: rotateY(180deg);
 }
 
-.flip-card-front3, .flip-card-back3 {
+.flip-card-front3,
+.flip-card-back3 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -146,7 +148,7 @@ body {
 }
 
 .flip-card-back3 {
-  background-color: #1e0285;
+  background-color: #1c1a81;
   color: white;
   transform: rotateY(180deg);
 }
